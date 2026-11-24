@@ -1,0 +1,38 @@
+<view class="page">
+  <block wx:if="{{mode === 'self'}}">
+    <view class="label">选几个你的标签（≤5 个）</view>
+    <view class="tags">
+      <text
+        wx:for="{{tags}}" wx:key="name"
+        class="tag {{item.selected ? 'on' : ''}}"
+        data-i="{{index}}" bindtap="toggleTag">{{item.name}}</text>
+    </view>
+
+    <view class="label">经历 / 口头禅（可选）</view>
+    <textarea bindinput="onExp" value="{{experience}}" placeholder="比如：口头禅是「再睡五分钟」，减肥失败 99 次…" />
+
+    <button class="btn plain" bindtap="random">🎲 一键随机</button>
+  </block>
+
+  <block wx:else>
+    <view class="label">TA 的昵称（必填）</view>
+    <input bindinput="onName" value="{{friendName}}" placeholder="比如：阿强" />
+
+    <view class="label">TA 的特点 / 梗（可选）</view>
+    <textarea bindinput="onTrait" value="{{friendTrait}}" placeholder="比如：永远「下次一定」，微信步数常年三位数" />
+
+    <view class="label">你们的关系</view>
+    <view class="tags">
+      <text
+        wx:for="{{relations}}" wx:key="*this"
+        class="tag {{relationIndex === index ? 'on' : ''}}"
+        data-i="{{index}}" bindtap="pickRel">{{item}}</text>
+    </view>
+  </block>
+
+  <view class="hint {{hint ? 'show' : ''}}">{{hint}}</view>
+
+  <button class="btn primary" bindtap="generate" loading="{{loading}}">
+    {{mode === 'self' ? '生成我的墓碑' : '给 TA 立碑'}}
+  </button>
+</view>

@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="tomb">
+    <view class="cross">✝</view>
+    <view class="rname">{{data.name}}</view>
+    <view class="epitaph">{{data.epitaph}}</view>
+
+    <view class="blk">
+      <view class="h">人生高光回顾（离谱版）</view>
+      <view class="item" wx:for="{{data.highlights}}" wx:key="*this">{{item}}</view>
+    </view>
+
+    <view class="blk">
+      <view class="h">亲友寄语</view>
+      <view class="item" wx:for="{{data.comments}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button class="btn ghost" bindtap="regenerate">重新生成</button>
+    <button class="btn primary" bindtap="save">保存图片</button>
+  </view>
+  <button class="btn plain" open-type="share">分享给朋友</button>
+  <view class="note">保存后分享给朋友一起乐</view>
+
+  <canvas canvas-id="card" class="hidden-canvas" style="width:300px;height:560px;"></canvas>
+</view>

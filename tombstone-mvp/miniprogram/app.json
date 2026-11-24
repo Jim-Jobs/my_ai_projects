@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/create/create",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1c1c24",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "人生墓碑",
+    "backgroundColor": "#f4f4f7",
+    "backgroundTextStyle": "dark"
+  },
+  "cloud": true
+}

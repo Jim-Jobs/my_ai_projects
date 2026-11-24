@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="hero">
+    <text class="title">🪦 人生墓碑</text>
+    <text class="sub">给自己 / 朋友，立一块"毒舌但治愈"的碑</text>
+  </view>
+
+  <button class="btn primary" bindtap="goSelf">给自己立碑</button>
+  <button class="btn ghost" bindtap="goFriend">给朋友立碑</button>
+
+  <view class="label">大家正在立碑</view>
+  <view class="sample" wx:for="{{samples}}" wx:key="t">
+    <text class="s-t">{{item.t}}</text>
+    <text class="s-e">{{item.e}}</text>
+  </view>
+</view>
